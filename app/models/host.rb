@@ -3,6 +3,7 @@ class Host < ApplicationRecord
     include Nokogiri
     include OpenURI
     has_many :reviews, as: :reviewable, dependent: :destroy
+    has_many :requests
     before_save :assign_personality
 
     base_uri 'https://gateway.watsonplatform.net/tone-analyzer'
