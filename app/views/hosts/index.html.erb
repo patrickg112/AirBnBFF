@@ -8,7 +8,7 @@
 			<div class="panel-heading">Information</div>
 			<div class="panel-body">
 			<%@hosts.each do |t|%><br>
-				Username: <%=t.username%><br>
+				Username: <%= link_to t.username, t %><br>
 				Address: <%=t.address%><br>
 				Bio: <%=t.bio%><br>
 <%end%>
