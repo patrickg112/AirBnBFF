@@ -1,6 +1,6 @@
 <h1><%=@host.username%> Pending Requests</h1>
 
-<%=@requests.each do |t|%>
-Request from:<%t.traveler%>
-Compatibility: <%t.compatible%>
+<%@requests.each do |t|%>
+Request from:<%=t.traveler.username%>
+Compatibility: <%=t.compatible%>
 <%end%>
