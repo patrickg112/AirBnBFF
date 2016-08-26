@@ -6,6 +6,7 @@ class CreateHosts < ActiveRecord::Migration[5.0]
       t.string :address
       t.string :city_state
       t.float :host_expectations
+      t.float :new_exp
       t.float :openness
       t.float :conscientiousness
       t.float :extraversion

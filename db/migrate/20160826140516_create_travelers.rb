@@ -4,6 +4,7 @@ class CreateTravelers < ActiveRecord::Migration[5.0]
       t.string :username
       t.string :bio
       t.float :guest_expectations
+      t.float :new_exp
       t.float :openness
       t.float :conscientiousness
       t.float :extraversion
