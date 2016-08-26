@@ -69,18 +69,4 @@ ActiveRecord::Schema.define(version: 20160826141810) do
     t.datetime "updated_at",         null: false
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string   "username"
-    t.integer  "host_g_desire"
-    t.integer  "guest_h_desire"
-    t.string   "new_exp_desire"
-    t.integer  "openness"
-    t.integer  "conscientiousness"
-    t.integer  "extraversion"
-    t.integer  "agreeableness"
-    t.integer  "emotional_range"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-  end
-
 end
