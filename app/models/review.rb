@@ -19,10 +19,12 @@ class Review < ApplicationRecord
       disgust = response.parsed_response["document_tone"]["tone_categories"][0]["tones"][1]["score"]
       fear = response.parsed_response["document_tone"]["tone_categories"][0]["tones"][2]["score"]
       average_negative = (anger + disgust + fear)/3
-      #if average of these is higher than joy, respond false
-      joy = response.parsed_response["document_tone"]["tone_categories"][0]["tones"][3]["score"]
-
-      self.review_positive = true
+      positive = response.parsed_response["document_tone"]["tone_categories"][0]["tones"][3]["score"]
+      if average_negative >= positive
+        self.review_positive = false
+      else
+        self.review_positive = true
+      end
       self.save
     end
 

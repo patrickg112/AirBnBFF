@@ -4,6 +4,7 @@ class CreateReviews < ActiveRecord::Migration[5.0]
       t.integer :host_id
       t.integer :traveler_id
       t.boolean :positive_review
+      t.text :body
 
       t.timestamps
     end

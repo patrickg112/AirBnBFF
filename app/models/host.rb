@@ -11,9 +11,9 @@ class Host < ApplicationRecord
     format :json
 
     def assign_personality
-      doc = Nokogiri::HTML(open(self.profile_link))
-      text = doc.css('div.space-top-2').children.css('p').text
-      response = get('/api/v3/tone?version=2016-05-19', :query => {:text => text})
+      # doc = Nokogiri::HTML(open(self.profile_link))
+      # text = doc.css('div.space-top-2').children.css('p').text
+      response = get('/api/v3/tone?version=2016-05-19', :query => {:text => self.bio})
       self.set_values(response)
     end
 
