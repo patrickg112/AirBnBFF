@@ -1,1 +1,6 @@
-<%=@host.requests.each do |t|%>
+<h1><%=@host.username%> Pending Requests</h1>
+
+<%=@requests.each do |t|%>
+Request from:<%t.traveler%>
+Compatibility: <%t.compatible%>
+<%end%>

@@ -4,13 +4,15 @@ class Review < ApplicationRecord
     include OpenURI
 
     base_uri 'https://gateway.watsonplatform.net/tone-analyzer'
-    basic_auth ENV[USERKEY], ENV[PASSKEY]
+    basic_auth ENV['USERKEY'], ENV['PASSKEY']
     format :json
     belongs_to :traveler
     belongs_to :host
 
+    private
+
     def assign_tone
-      response = get('/api/v3/tone?version=2016-05-19', :query => {:text => self.body})
+      response = HTTParty.get('/api/v3/tone?version=2016-05-19', :query => {:text => self.body})
       self.review_positive?(response)
     end
 

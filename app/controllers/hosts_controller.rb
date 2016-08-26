@@ -8,4 +8,9 @@ class HostsController < ApplicationController
     @host = Host.find(params[:id])
   end
 
+  def requests
+    @host = Host.find(params[:id])
+    @requests = @host.requests
+  end
+
 end

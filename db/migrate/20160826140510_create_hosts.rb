@@ -3,6 +3,8 @@ class CreateHosts < ActiveRecord::Migration[5.0]
     create_table :hosts do |t|
       t.string :username
       t.string :bio
+      t.string :address
+      t.string :city_state
       t.integer :host_expectations
       t.integer :openness
       t.integer :conscientiousness
