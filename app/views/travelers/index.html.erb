@@ -1,6 +1,24 @@
-<h1>TRAVELERS</h1>
-<%@travelers.each do |t|%>
-<%=t.username%><br>
-<%=t.bio%><br>
+<div align="center"><h1>Travelers</h1></div>
+
+
+<div class="row"> 
+	<div class="col-md-12">
+			<div align="center">
+			<%= image_tag "avi.png", class: "avatar-larg"%>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">Information</div>
+			<div class="panel-body">
+			<%@travelers.each do |t|%>
+			<%= link_to t.username, t %><br>
+			<%=t.bio%><br><br><br>
 
 <%end%>
+
+					<div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+		
