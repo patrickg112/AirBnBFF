@@ -37,6 +37,6 @@ Emotional Range Evaluation:<%=@traveler.emotional_range%><br>
 <div>
 <h1>Recommendations</h1>
 	<% @recommend.each do |recommendation| %>
-		<%= recommendation %>
+		<li><%= link_to recommendation.username, recommendation %></li>
 	<% end %>
 </div>

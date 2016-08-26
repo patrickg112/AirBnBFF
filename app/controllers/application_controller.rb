@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
       traits = []
       # byebug
       traits << emo_analysis(user.openness, "open")
+      # byebug
       traits << emo_analysis(user.conscientiousness, "conscientious")
       traits << emo_analysis(user.extraversion, "extraverted")
       traits << emo_analysis(user.agreeableness, "agreeable")
@@ -15,12 +16,11 @@ class ApplicationController < ActionController::Base
   end
 
   def emo_analysis(emo_val, emo_name)
-    case emo_val
-    when emo_val <= 2
+    if emo_val <= 0.2
       "not very #{emo_name}"
-    when emo_val = 3
+    elsif 0.3 <= emo_val && emo_val <= 0.6
       "#{emo_name}"
-    when emo_val >= 4
+    elsif emo_val >= 0.7
       "very #{emo_name}"
     else
       "inconclusive"
