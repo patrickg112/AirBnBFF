@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
   def traits(user)
       traits = []
+      # byebug
       traits << emo_analysis(user.openness, "open")
       traits << emo_analysis(user.conscientiousness, "conscientious")
       traits << emo_analysis(user.extraversion, "extraverted")

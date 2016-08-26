@@ -11,8 +11,12 @@ Request.delete_all
                 bio: "Love great conversation, connecting with inspirational and courageous people, exploring new places, writing, chai tea, practising yoga, riding bikes and creative work. Born and bred in the UK and Australia; I adore San Francisco, New York and Berlin – and owe a lot to my home city, Melbourne. Next big trip when I get the chance: India.",
                 address: rand(1..5000).to_s+' '+rand(1..9).to_s+'th Avenue',
                 city_state: 'New York, NY',
-                host_expectations: rand(1..5),
-                new_exp: rand(1..5)
+                host_expectations: rand(0.0..1.0),
+                openness: rand(0.0..1.0),
+                conscientiousness: rand(0.0..1.0),
+                extraversion: rand(0.0..1.0),
+                agreeableness: rand(0.0..1.0),
+                emotional_range: rand(0.0..1.0)
                 })
 end
 
