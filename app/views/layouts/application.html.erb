@@ -7,8 +7,27 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
+  <body>      
+<nav class="navbar navbar-default navbar-static-top">
+    <div id="navbar">
+    <%= image_tag "logo.png",height: 45, width: 45, class: "navbar-wagon-logo hidden-xs" %>
+     
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+        <%=link_to "Host", host_path %>
+        </li>
+        <li>
+          <a href="#"> | Message </a>
+        </li>
+         <li>
+          <a href="#">| Help </a>
+        </li>
+      </ul>
+    </div><
+  </div>
+</nav>
 
-  <body>
+
     <%= yield %>
   </body>
 </html>
