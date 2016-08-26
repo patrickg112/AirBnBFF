@@ -6,6 +6,7 @@ class HostsController < ApplicationController
 
   def show
     @host = Host.find(params[:id])
+    @recommendations = host_recommendations(@host)
   end
 
   def requests

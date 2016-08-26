@@ -38,4 +38,15 @@ class ApplicationController < ActionController::Base
     matches
   end
 
+  def host_recommendations(host)
+    travelers = Traveler.all
+    matches = []
+    travelers.each do |traveler|
+      if (traits(host) & traits(traveler)).length >= 3
+        matches << traveler
+      end
+    end
+    matches
+  end
+
 end
