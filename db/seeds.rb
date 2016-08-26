@@ -43,9 +43,12 @@ end
               })
 end
 
+
 user_h1 = Host.first
 user_h2 = Host.last
 user_t1 = Traveler.first
 user_t2 = Traveler.last
+users = [user_h1, user_h2, user_t2, user_t1]
+users.assign_personality
 
 Request.create!(host: user_h1, traveler: user_t1)

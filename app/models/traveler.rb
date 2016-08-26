@@ -4,7 +4,7 @@ class Traveler < ApplicationRecord
   include OpenURI
   has_many :reviews, as: :reviewable, dependent: :destroy
   has_many :requests
-  after_create :assign_personality
+  # after_create :assign_personality
 
 
   def assign_personality
