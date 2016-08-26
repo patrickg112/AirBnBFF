@@ -4,7 +4,7 @@ class Host < ApplicationRecord
     include OpenURI
     has_many :reviews, as: :reviewable, dependent: :destroy
     has_many :requests
-    # before_save :assign_personality
+    # after_create :assign_personality
 
     def assign_personality
       response = HTTParty.get( 'https://gateway.watsonplatform.net/tone-analyzer/api/v3/tone?version=2016-05-19', {:query => {:text => self.bio}, :basic_auth => {:username => ENV['USERKEY'], :password => ENV['PASSKEY']} })

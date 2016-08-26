@@ -1,9 +1,29 @@
 <h1><%=@host.username%>'s Page</h1>
 <div>
 <%=@host.bio%><br><br>
-Expectations:<%=@host.host_expectations%><br><br><br>
+</div>
+<div>
+<h3>Please rank 1 to five how open you are feeling to new experiences:</h3>
+<ol>
+<li>Not open at all</li>
+<li>Very hesitant</li>
+<li>Cautiously open</li>
+<li>Open</li>
+<li>Actively searching for an exciting, new experience</li>
+</ol>
+Host chose: <%=@host.host_expectations.to_i%><br>
 
+<h3>Rank how interested you are in interacting with your guest:</h3>
+<ol>
+<li>I am doing this for money only and just want to make sure my property isn’t destroyed.</li>
+<li>I am not interested in interacting with a guest.</li>
+<li>I do not need to interact with my guest, but wouldn’t mind getting involved.</li>
+<li>I would like to help my guest find places in the area.</li>
+<li>I have an itinerary ready and I want to see their vacation photos at the end of this!</li>
+</ol>
+Host chose: <%=@host.new_exp.to_i%><br><br><br>
 
+</div>
 
 [Will Be Hidden]<br>
 Openness Evaluation:<%=@host.openness%><br>

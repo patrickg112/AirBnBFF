@@ -5,7 +5,7 @@ class Review < ApplicationRecord
 
     belongs_to :traveler
     belongs_to :host
-    before_save :assign_tone
+    # after_create :assign_tone
 
     def assign_tone
       response = HTTParty.get( 'https://gateway.watsonplatform.net/tone-analyzer/api/v3/tone?version=2016-05-19', {:query => {:text => self.body}, :basic_auth => {:username => ENV['USERKEY'], :password => ENV['PASSKEY']} })
