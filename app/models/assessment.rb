@@ -1,4 +1,4 @@
-class Assessment
+module Assessment
   include HTTParty
   include Nokogiri
   include OpenURI
@@ -15,7 +15,7 @@ class Assessment
 
 end
 
-link = self.fblink
+link = self.profile_link
 doc = Nokogiri::HTML(open(link))
 text = doc.css('div.space-top-2').children.css('p').text
 v = Assessment.get_personality(text)
