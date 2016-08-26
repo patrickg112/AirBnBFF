@@ -1,16 +1,16 @@
-class CreateUsers < ActiveRecord::Migration[5.0]
+class CreateHosts < ActiveRecord::Migration[5.0]
   def change
-    create_table :users do |t|
+    create_table :hosts do |t|
       t.string :username
-      t.integer :host_g_desire
-      t.integer :guest_h_desire
-      t.string :new_exp_desire
+      t.string :bio
+      t.integer :host_wishes
       t.integer :openness
       t.integer :conscientiousness
       t.integer :extraversion
       t.integer :agreeableness
       t.integer :emotional_range
       t.string :profile_link
+
       t.timestamps
     end
   end
