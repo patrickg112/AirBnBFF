@@ -7,6 +7,7 @@ class HostsController < ApplicationController
   def show
     @host = Host.find(params[:id])
     @recommendations = host_recommendations(@host)
+    # byebug
   end
 
   def requests

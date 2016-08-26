@@ -7,6 +7,7 @@ class TravelersController < ApplicationController
   def show
     @traveler = Traveler.find(params[:id])
     @recommend = recommend(@traveler)
+  
   end
 
   def recommendations

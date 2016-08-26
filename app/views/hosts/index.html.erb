@@ -1,7 +1,7 @@
 <h1>HOSTS</h1>
 <%@hosts.each do |t|%>
-<%=t.username%><br>
+<%= link_to t.username, t%><br>
 <%=t.address%><br>
-<%=t.bio%><br>
+<%=t.bio%><br><br><br>
 
 <%end%>
