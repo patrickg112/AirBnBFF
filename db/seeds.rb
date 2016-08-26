@@ -11,11 +11,11 @@ Request.delete_all
                 bio: "SEED FILE BIO",
                 address: rand(1..5000).to_s+' '+rand(1..9).to_s+'th Avenue',
                 city_state: 'New York, NY',
-                host_expectations: rand(1..5),
-                openness: rand(1..5),
-                extraversion: rand(1..5),
-                agreeableness: rand(1..5),
-                emotional_range: rand(1..5)
+                host_expectations: rand(0.0..1.0),
+                openness: rand(0.0..1.0),
+                extraversion: rand(0.0..1.0),
+                agreeableness: rand(0.0..1.0),
+                emotional_range: rand(0.0..1.0)
                 })
 end
 

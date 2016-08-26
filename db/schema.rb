@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20160826141810) do
     t.string   "address"
     t.string   "city_state"
     t.float    "host_expectations"
+    t.float    "new_exp"
     t.float    "openness"
     t.float    "conscientiousness"
     t.float    "extraversion"
@@ -57,6 +58,7 @@ ActiveRecord::Schema.define(version: 20160826141810) do
     t.string   "username"
     t.string   "bio"
     t.float    "guest_expectations"
+    t.float    "new_exp"
     t.float    "openness"
     t.float    "conscientiousness"
     t.float    "extraversion"
@@ -65,6 +67,20 @@ ActiveRecord::Schema.define(version: 20160826141810) do
     t.string   "profile_link"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "username"
+    t.integer  "host_g_desire"
+    t.integer  "guest_h_desire"
+    t.string   "new_exp_desire"
+    t.integer  "openness"
+    t.integer  "conscientiousness"
+    t.integer  "extraversion"
+    t.integer  "agreeableness"
+    t.integer  "emotional_range"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
 end
