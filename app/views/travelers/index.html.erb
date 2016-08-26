@@ -1,6 +1,6 @@
 <h1>TRAVELERS</h1>
 <%@travelers.each do |t|%>
-<%=t.username%><br>
-<%=t.bio%><br>
+<%= link_to t.username, t %><br>
+<%=t.bio%><br><br><br>
 
 <%end%>

@@ -32,3 +32,10 @@ Conscientiousness Evaluation:<%=@host.conscientiousness%><br>
 Agreeableness Evaluation:<%=@host.agreeableness%><br>
 Emotional Range Evaluation:<%=@host.emotional_range%><br>
 </div>
+
+<div>
+<h1>Recommendations</h1>
+	<% @recommendations.each do |recommendation| %>
+		<li><%= link_to recommendation.username, recommendation %></li>
+	<% end %>
+</div>
