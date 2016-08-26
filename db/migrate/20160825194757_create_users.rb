@@ -10,6 +10,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.integer :extraversion
       t.integer :agreeableness
       t.integer :emotional_range
+      t.string :profile_link
       t.timestamps
     end
   end

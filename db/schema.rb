@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20160825194757) do
     t.integer  "extraversion"
     t.integer  "agreeableness"
     t.integer  "emotional_range"
+    t.string   "profile_link"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
   end
