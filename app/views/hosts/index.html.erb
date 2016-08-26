@@ -1,7 +1,16 @@
-<h1>HOSTS</h1>
-<%@hosts.each do |t|%>
-<%=t.username%><br>
-<%=t.address%><br>
-<%=t.bio%><br>
+<div align="center"><h1>HOSTS</h1></div>
 
+<div class="row"> 
+	<div class="col-md-12">
+		<div class="center">
+			<%= image_tag "spongebob.jpeg", class: "avatar-full"%>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">Information</div>
+			<div class="panel-body">
+			<%@hosts.each do |t|%><br>
+				Username: <%=t.username%><br>
+				Address: <%=t.address%><br>
+				Bio: <%=t.bio%><br>
 <%end%>
+		

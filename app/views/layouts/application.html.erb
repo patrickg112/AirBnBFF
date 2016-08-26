@@ -10,8 +10,9 @@
   <body>      
 <nav class="navbar navbar-default navbar-static-top">
     <div id="navbar">
+    <a href="/">
     <%= image_tag "logo.png",height: 45, width: 45, class: "navbar-wagon-logo hidden-xs" %>
-     
+     </a>
       <ul class="nav navbar-nav navbar-right">
         <li>
         <%=link_to "Host", hosts_url %>
@@ -22,12 +23,11 @@
          <li>
          <%=link_to "Recommendations" %>
         </li>
+         
       </ul>
     </div>
   </div>
 </nav>
-
-
     <%= yield %>
   </body>
 </html>

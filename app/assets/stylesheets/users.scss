@@ -93,6 +93,15 @@
     opacity: 0.1;
   }
 }
+
+.card-gradient {
+  background-image: linear-gradient(to right, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.1) 80%);
+  border-radius: 3px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
 a { font-size: 2em;
     font-weight: 200;
    background-color: #FFFFFF;}
