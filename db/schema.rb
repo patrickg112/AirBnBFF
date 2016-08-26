@@ -20,12 +20,12 @@ ActiveRecord::Schema.define(version: 20160826141810) do
     t.string   "bio"
     t.string   "address"
     t.string   "city_state"
-    t.integer  "host_expectations"
-    t.integer  "openness"
-    t.integer  "conscientiousness"
-    t.integer  "extraversion"
-    t.integer  "agreeableness"
-    t.integer  "emotional_range"
+    t.float    "host_expectations"
+    t.float    "openness"
+    t.float    "conscientiousness"
+    t.float    "extraversion"
+    t.float    "agreeableness"
+    t.float    "emotional_range"
     t.string   "profile_link"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
@@ -56,12 +56,12 @@ ActiveRecord::Schema.define(version: 20160826141810) do
   create_table "travelers", force: :cascade do |t|
     t.string   "username"
     t.string   "bio"
-    t.integer  "guest_expectations"
-    t.integer  "openness"
-    t.integer  "conscientiousness"
-    t.integer  "extraversion"
-    t.integer  "agreeableness"
-    t.integer  "emotional_range"
+    t.float    "guest_expectations"
+    t.float    "openness"
+    t.float    "conscientiousness"
+    t.float    "extraversion"
+    t.float    "agreeableness"
+    t.float    "emotional_range"
     t.string   "profile_link"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
