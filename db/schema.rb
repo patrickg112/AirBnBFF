@@ -10,16 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160825194757) do
+ActiveRecord::Schema.define(version: 20160826141810) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "users", force: :cascade do |t|
+  create_table "hosts", force: :cascade do |t|
     t.string   "username"
-    t.integer  "host_g_desire"
-    t.integer  "guest_h_desire"
-    t.string   "new_exp_desire"
+    t.string   "bio"
+    t.string   "address"
+    t.string   "city_state"
+    t.integer  "host_expectations"
     t.integer  "openness"
     t.integer  "conscientiousness"
     t.integer  "extraversion"
@@ -28,6 +29,42 @@ ActiveRecord::Schema.define(version: 20160825194757) do
     t.string   "profile_link"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+  end
+
+  create_table "requests", force: :cascade do |t|
+    t.integer  "host_id"
+    t.integer  "traveler_id"
+    t.boolean  "compatible"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "host_id"
+    t.integer  "traveler_id"
+    t.boolean  "positive_review"
+    t.string   "reviewable_type"
+    t.integer  "reviewable_id"
+    t.text     "body"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["host_id"], name: "index_reviews_on_host_id", using: :btree
+    t.index ["reviewable_type", "reviewable_id"], name: "index_reviews_on_reviewable_type_and_reviewable_id", using: :btree
+    t.index ["traveler_id"], name: "index_reviews_on_traveler_id", using: :btree
+  end
+
+  create_table "travelers", force: :cascade do |t|
+    t.string   "username"
+    t.string   "bio"
+    t.integer  "guest_expectations"
+    t.integer  "openness"
+    t.integer  "conscientiousness"
+    t.integer  "extraversion"
+    t.integer  "agreeableness"
+    t.integer  "emotional_range"
+    t.string   "profile_link"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
 end

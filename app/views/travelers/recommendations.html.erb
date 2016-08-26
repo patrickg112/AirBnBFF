@@ -1,0 +1,7 @@
+<h1><%=@traveler.username%> Pending Requests</h1>
+
+<%@traveler.recommendations.each do |t|%>
+Host:<%=t.host%><br>
+Address: <%=t.address%><br>
+City, State: <%=t.city%><br>
+<%end%>

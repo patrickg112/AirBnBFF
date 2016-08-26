@@ -4,18 +4,16 @@ class Traveler < ApplicationRecord
   include OpenURI
   has_many :reviews, as: :reviewable, dependent: :destroy
   has_many :requests
-  before_save :assign_personality
+  # before_save :assign_personality
 
   base_uri 'https://gateway.watsonplatform.net/tone-analyzer'
-  basic_auth ENV[USERKEY], ENV[PASSKEY]
+  basic_auth ENV['USERKEY'], ENV['PASSKEY']
   format :json
 
   private
 
   def assign_personality
-    doc = Nokogiri::HTML(open(self.profile_link))
-    text = doc.css('div.space-top-2').children.css('p').text
-    response = get('/api/v3/tone?version=2016-05-19', :query => {:text => text})
+    response = HTTParty.get('/api/v3/tone?version=2016-05-19', :query => {:text => self.bio})
     self.set_values(response)
   end
 

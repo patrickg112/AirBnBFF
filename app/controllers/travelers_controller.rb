@@ -8,4 +8,9 @@ class TravelersController < ApplicationController
     @traveler = Traveler.find(params[:id])
   end
 
+  def recommendations
+    @traveler = Traveler.find(params[:id])
+    @recs = @traveler.recommendations
+  end
+
 end

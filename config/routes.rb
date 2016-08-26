@@ -3,8 +3,9 @@ Rails.application.routes.draw do
 
   resources :hosts, only: [:index, :show]
   resources :travelers, only: [:index, :show]
-  get '/users/:id/recommendations' => 'users#recommendations'
-
-  get '/hosts/:id/requests' => 'users#requests'
+  get '/travelers/:id/recommendations' => 'travelers#recommendations'
+  get '/travelers/:id/compatible' => 'travelers#requests'
   
+  get '/hosts/:id/requests' => 'hosts#requests'
+
 end
