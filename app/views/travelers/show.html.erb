@@ -1,3 +1,29 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+	<div class="row"> 
+		<div class="col-md-1">
+		</div>
+	<div class="col-xs-3">	
+		<div class="panel panel-default">
+		<%= image_tag "avatar.png", class: "avatar-full"%>
+			<div class="panel-heading">Verification</div>
+				<div class="panel-body">
+					Email: Iamatraveler@airbnb.com</br>
+					Phone number: 867-5309
+				</div>
+			</div>
+		</div>
+		<h1> Hey, I'm <%=@traveler.username%></h1>
+		<p>I am a Traveler</p>
+		<p>US · Member since August 2016</p>
+		</div>
+	<div>
+</div>
 <h1><%=@traveler.username%></h1>
 
 <div>
@@ -35,7 +61,7 @@ Emotional Range Evaluation:<%=@traveler.emotional_range%><br>
 </div>
 
 <div>
-<h1>Recommendations</h1>
+<h1>Hosts that we recommend</h1>
 	<% @recommend.each do |recommendation| %>
 		<li><%= link_to recommendation.username, recommendation %></li>
 	<% end %>

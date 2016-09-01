@@ -1,20 +1,24 @@
-<div align="center"><h1>Travelers</h1></div>
-
-
+        <div class="trav">
+          <span class="trav-bg" > <%=image_tag "travlers.png", id: "trav", class: "trav" %>/span>
+          <span class="trav-text">
+           <h1>Travler List</h1>
+            <p><i>Below, is a list of all travelers seeded into our database.  Click on the travelers name to view their profile.  Within the profile, you will see a survey and it's contents.  You will also be able to see recommended hosts based on your responses to said survey.</i></p>
+          </span>
+        </div>
 <div class="row"> 
 	<div class="col-md-12">
 			<div align="center">
-			<%= image_tag "avi.png", class: "avatar-larg"%>
 		</div>
 		<div class="panel panel-default">
-			<div class="panel-heading">Information</div>
+			<div class="panel-heading">
+			<h2>Travler Information
+			</h2>
+			</div>
 			<div class="panel-body">
 			<%@travelers.each do |t|%>
-			<%= link_to t.username, t %><br>
-			<%=t.bio%><br><br><br>
-
-<%end%>
-
+			Traveler Username: <%= link_to t.username, t %><br>
+			Bio: <%=t.bio%><br><br><br>
+			<%end%>
 					<div>
 				</div>
 			</div>

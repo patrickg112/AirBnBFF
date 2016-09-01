@@ -1,18 +1,27 @@
-<div align="center"><h1>HOSTS</h1></div>
+     <div class="trav">
+          <span class="trav-bg" > <%=image_tag "travel.png", id: "trav", class: "trav" %></span>
+          <span class="trav-text">
+           <h1>Host List</h1>
+            <p><i>Below, is a list of all hosts seeded into our database.  Click on the host name to view their profile.  Within the profile, you will see a survey and it's contents.  You will also be able to see recommended hosts based on your responses to said survey.</i></p>
+          </span>
+        </div>
 <div class="row"> 
 	<div class="col-md-12">
-		<div align="center">
-			<%= image_tag "avi.png", class: "avatar-larg"%>
+			<div align="center">
 		</div>
 		<div class="panel panel-default">
-			<div class="panel-heading">Information</div>
+			<div class="panel-heading">
+			<h2>Host Information
+			</h2>
+			</div>
 			<div class="panel-body">
 			<%@hosts.each do |t|%><br>
-				Username: <%=t.username%><br>
+				Host Username: <%= link_to t.username, t %><br>
 				Address: <%=t.address%><br>
 				Bio: <%=t.bio%><br>
-<%end%>
-					</div>
+			<%=t.bio%><br><br><br>
+			<%end%>
+					<div>
 				</div>
 			</div>
 		</div>
